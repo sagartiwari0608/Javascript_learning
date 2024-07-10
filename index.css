@@ -1,0 +1,39 @@
+body{
+    /* background-color: rgb(128, 128, 128); */
+    background-repeat: no-repeat;
+    background-image: url("710217.jpg");
+    /* margin:0px;
+    padding:0px; */
+}
+
+
+/*  So here we have learnt below that if we add multiple classes and/or change same class multiple times.
+ it will make all the changes and it will display the most recent changes. it goes from top down aproach.
+ and if you add moer than one lass it will merge the changes. it will always display the last changes to any property that you make */
+
+
+.container{
+    background-color: red;
+    margin:15%;
+}
+.container{
+    background-color: aqua;
+    /* margin: 2px; */
+    border : 5px solid red;
+} 
+
+/* /////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+#click{
+    background-color: red;
+}
+p{
+    margin:5px;
+}
+*{
+    padding:0px;
+    margin:0px;
+}
+.anyrandom{
+    background-color: blueviolet;
+}

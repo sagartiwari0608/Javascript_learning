@@ -1,0 +1,2 @@
+1. when exactly does the setTimeout() works. Is it its own choice?. or browsers own choice? means that depends on browser?
+question arises because according to the name and defintition it should take a minimum delay of mentioned time. but doesn't matter how many times i try all the set time out function will run after end of program only.

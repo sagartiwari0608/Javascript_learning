@@ -1,0 +1,40 @@
+Html is basic skeliton of a webpage. without html we can not see anything.
+means even the a webpage will not open with html.
+
+CSS is for styling the webpage.
+
+and after these two we need something to make our website interactive.
+we can choose any language for that pupose out of available options.
+be it python, php javascript. etc 
+So we choose javascript because it has a very large support and is gaining popularityvery fast.
+
+And it has so many  benifits because it gets performed on the client side.
+means the functions and evrything even the processing and the rendering of the graphics would be on the client side.
+
+since this is a client side web based language so it doesnt need any installation or anything.
+it can directly run onto the browser.just like html and css.
+
+now in html evrything works with tags.
+and tags need to be closed properly to work.
+we have to remember few points that we have learned till now .
+1. always try to put all the different technologies in different files. same location but different files.
+2. if we ever need to create a inpage script. make sure to use it after the body end. so that the basic poage can load first then all of the script can work later.
+3. while working with CSS . always remember the difference between class and id.
+ID is denoted by "#" and class is denoted by "."
+4. Class, like in other languages, is like a blueprint which we can use multiple times. but id is something which we can give to only one item.
+5. while writing a tag if you want to give it a class. use "." e.g. if we write div.container and hit enter.
+it will automatically convert it to <div class="container"></div>
+6. similarly for id we use # . like button#clickable
+it will turn into <button id="clickable"></button>
+7. div tag is used for creating a seperate division in which we can do anything we want.and we can control the size of the div according to our need.
+8. operators and arrays are same as other languages. the dictionaries in python are called here objects in javascript.
+9.logical AND is && and logical OR  c is || if we use single of these then they will become bitwise and and or.
+10. the functions here are defined with the help of keyword function and they are enclosed in {}. we can return the values here as well.
+11. if else is also same here as JAVA just use {}.  
+12. for loop and while and do while is also same as JAVA.There is a ForEach Loop in js it works as in Index.js file
+13.break and continue is also same.
+14. array methods and properties can be accessed by using "." like in the idex.html example.
+15. We can perform different types of string operations as well. we just have to use"." here as well.
+16. DOM manipulation is an imortant part. of learning. DOM is document object model. and its nothing but just the whole document which our webpage loads and displays.
+17. There are differen types of inbuilt functions and classes as well. E.g. Date, 
+18. strings and arrays are iterable but objects are not iterable.

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index2.css">
+    <!-- this is the best way to link a JS file because this makes the the browser do loading of the js file and parsing of html file simultaneously. after the js finishes loading. this command allows browser to finish parsing then imidiately starts the execution of the js -->
+    <!-- <script src="DomManipulation.js" defer></script>  -->
+    <!-- <script src="events.js" defer></script>  -->
+    <script src="index2.js" defer></script> 
+    <title>Index 2</title>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav container">
+            <h1 class="logo">Navbar</h1>
+            <ul class="nav-items">
+                <li class="nav-items"><a href="#home">Home</a></li>
+                <li class="nav-items"><a href="">Contact</a></li>
+                <li class="nav-items"><a href="">Sign up</a></li>
+            </ul>
+        </nav>
+        <div class="headline">
+            <h2 id="ManageYourTasks">Manage your tasks <span>Hey there</span></h2>
+            <button class="btn btn-headline" type="reset">Click here</button>
+        </div>
+    </header>
+    <section class="section-todo container">
+        <h2>Your Tasks for Today</h2>
+        <form class="form-todo">
+            <input type="text" name="" id="" placeholder="Add Todo">
+            <input type="submit" value="Add" class="btn submit" id="btnAddTask" >
+        </form>
+
+
+        <ul class="todolist" >
+            <li>
+                <span class="text">first task</span>
+                <div class="todo-buttons">
+                    <button class="todolist-button done">Done</button>
+                    <button class="todolist-button remove">Remove</button>
+                </div>
+            </li>
+        </ul>
+
+
+
+    </section> 
+
+
+
+    <section class="section-signup container">
+        <form action="" class="SignupForm form-group">
+            <div>
+                <h2>Sign-Up</h2>
+            </div>
+            <div>
+                <label for="username">Username :</label>
+                <input type="text" name="username" id="username">
+            </div>
+            <div>
+                <label for="password">Password :</label>
+                <input type="password" name="password" id="password">
+            </div>
+            <div>
+                <label for="confirmPassword">Confirm Password :</label>
+                <input type="password" name="confirmPassword" id="confirmPassword">
+            </div>
+            <div>
+                <label for="phoneNo">Phone No :</label>
+                <input type="number" name="phoneNo" id="phoneNo">
+            </div>
+            <div>
+                <label for="email">Email :</label>
+                <input type="email" name="email" id="email">
+            </div>
+            <br>
+            <button class="btn submit" type="submit">Submit</button>
+            <!-- <div>
+                <label for="submit">Create Account</label>
+                <input type="submit" name="submit" id="submit">
+            </div> -->
+        </form>
+    </section>
+</body>
+</html>
+
+

@@ -1,0 +1,10 @@
+We will understand how js works and notes for this part will be in the notebook.
+
+and we can always go to fonts.google.com and then select the font and fid the download link or just copy thelink from there and then paste it and then copy the font family and paste it in the style sheet.
+
+<!-- these below list are created using abbrevation shortcut li{$ "item" $}*5 -->
+            <!-- <li>1 item 1</li>
+            <li>2 item 2</li>
+            <li>3 item 3</li>
+            <li>4 item 4</li>
+            <li>5 item 5</li> -->

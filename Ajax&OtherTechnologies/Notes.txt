@@ -1,0 +1,15 @@
+
+AJAX : Asynchronous Javascript And XML
+
+it is just a set of web dev techniques.
+we have learn Asynchronous Javascript. and we know it is used for making the changes in the document without interfering the ongoing procedure and visuals.
+
+XML: Extensible Markup Language (XML) is a format to store and transport data from the Web Server.
+XML is not much used right now its been overtaken by JSON Javascript Object Notation. xml has its own functions and use cases.
+
+//How AJAX works
+AJAX makes use of a browser built-in XMLHttpRequest object to request data from a Web Server and HTML DOM to display or use the data.
+
+XMLHttpRequest Object : It is an API in the form an object whose methods help in transfer of data between a web browser and a web server.
+
+HTML DOM : When a web page is loaded, the browser creates a Document Object Model of the page.

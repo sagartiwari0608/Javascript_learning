@@ -1,0 +1,1058 @@
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Index.js
+
+"use strict";      // This is a keyword or a way to tell JS that dont be so forgiving and follow the conventions.
+
+
+// // These all are methods of how you make an ouput on the display
+// //  or if working with browser we will have to check the console of the browser.
+// // by turning on developer tools and then inspect anywhere on the window and then go to console.
+//  The shortcut to go quicly to console is " ctrl + shift + J"
+
+// OUTPUT IN JS
+console.log("Hello everyone!");
+console.log('Hello everyone!');
+console.log(`Hello everyone`); // this method is not preffered because this is used for some other purpose that is Mentioned in "E:\MY WORK\WebDev\StringsNotes.js" line number 51.
+console.log("Hello everyone!")  //this is to show that semicolon is not mandatory. but we use it as a good practice.
+
+
+
+// VARIABLE DECLARATION IN JS
+// as we are able to see this is a dynamic language it assigns the data type of variable during runtim dynamically. 
+// We use "let" keyword . Keyword is a word whose meaning is already defined in a programming language. just we should be aware of not to use these words
+let name= "sagar";
+let anynumber=124423.01209;
+console.log(anynumber);
+
+let nameIsSagar = "Tiwari";
+console.log("Sagar", nameIsSagar); // this wil display "Sagar tiwari" 
+console.log("Sagar"+ nameIsSagar); // this will display "sagartiwari" without space so we will have to provide the space by ourself here.
+
+
+//  Constants in JS are used when you dont want the value of something to change at all. so you as a coder will not ever mistakenly change the value of the those items.
+const numbers=122773;
+console.log(numbers);
+//  we wont be able to assign anything new means we wont be able to change the value of the const.
+
+// numbers=2;  //  This will cause an error. 
+
+
+
+// ALL THE DATATYPES IN JS. 
+// NOTE: there are two types of dtatypes in javascript. 
+//  Primitive and refrence type.
+// primitive are String, Number, boolean, undefined, Null, (BigInt,Symbols) less used but are there.
+
+let age=10;                         //number
+let number1= 1900.29082098;         //number
+let name2 = 'sagar'                 //String
+let isApproved = false;             //Boolean
+let firstname = undefined;          // Undefined. this is the default datatype and value of any variable that is not assigned to anything.
+let selectedColour= null;           //Null. yes null and undefined are different from each other. undefined is just undefined. and null means nothing. And there is a bug in js that null is defined as Object in JS wheree it should have been just Null but it is now kept as it is. so we just have to learn it as it is.
+console.log("double equals: ",firstname==selectedColour);
+console.log("triple equals: ",firstname===selectedColour);
+
+
+
+// FUNCTION DECLARATION IN JS.
+function random(){
+    document.writeln("bruh moment");
+    document.writeln("MOMENT");
+}
+
+// ALERTS IN JS . these are used to give out a warning / or urgent information to the user.Or they just are there just to take the attention of the user.
+alert("OKAY");
+
+// This is used to take user inputs while working with browser.
+var input = prompt("enter input:");
+console.log(input)
+
+
+
+let arr1 = [1,2,3,4,5,6,7]
+// For Each loop 
+let output="";
+arr1``.forEach(function(value){
+    output += value + "<br>";
+    console.log(value);
+})
+document.getElementById("firstcontainer").innerText=output;
+let smth = document.getElementsByClassName("container");
+smth[1].innerHtml=output;
+//we learnt something new here that if the output that we want to display is using some tags that we want to use. then use innerHTML. if we just want the output then we can just use innerText.
+
+
+
+
+
+
+//Array functions 
+
+let arr2 = [1,2,93,34,555,66457,7];
+let len= arr2.length; // length is a property so we dont have to use parenthesis here.
+console.log(len);
+let bruh = arr2.sort();
+
+//  here we will see something different than we are used to it converts all the elements to string then sorts them. so it sorts them alphabetically. as words are sorted in dictionary.
+console.log(bruh);
+
+
+// this all was its output.
+/*
+[    1, 2, 34, 555, 66457,  7,   93 ]
+*/
+
+// ############################### DOM manipulation.######################################
+
+// we can perform dom manipulation from here as well. from here as well i mean from the code too. 
+
+document.getElementById("click").click()
+document.getElementById('click').style.border = 'black solid 2px'
+document.getElementById('click').style.border = null
+
+// Now a bit more
+
+let getID = document.getElementById('click');
+console.log(getID);
+let getCLass = document.getElementsByClassName('container');
+console.log(getCLass);
+// now for this above example we have 2 classes. so it will return an html collection.
+// and this html collection means it is a type of array. and we will have to use it as follows.
+getCLass[0].style.border='15px solid brown';
+// getCLass[1].style.background='royalblue';
+
+
+let ChangingParagraph = document.getElementsByTagName('p'); // this returns a list of elements with same tag. as above class one does. so use the return value as an array
+ChangingParagraph[0].style.fontFamily='arial';
+
+
+//  THIS IS USED TO ADD NEW CLASSES. 
+console.log(ChangingParagraph);
+getCLass[0].classList.add("anyrandom"); 
+// we can add this class to the code as well. this will be added at run time.
+
+// similarly we can remove the class as well.
+// and we can access the inner HTML as well.
+let moment=getCLass[1].innerHTML;
+console.log(moment);
+// we can change this as well.
+let moment1=getCLass[1].innerText;
+
+console.log(moment1);
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+NumbersAndOtherDataTypes.js
+
+// firstly lets see primitive types.
+let num1 = 6;
+let num2 = num1;  // the value is copied into num2 from num1
+// changing ones value wont effect other.
+num1++;
+console.log("num1: ",num1);
+console.log("num2: ",num2);
+// as we can see only first value got changed.
+
+
+//  Lets see reference type now.
+
+let array1 = ["item1","item1"];
+let array2 = array1;                // since this was a reference type so both were referring to same memory block.
+
+console.log("array1",array1);
+console.log("array2",array1);
+
+array1.pop();
+array2.unshift("anything");                       //thats why when we changed one both got changed.
+console.log("popped once");
+console.log("array1",array1);
+console.log("array2",array1);
+
+
+// the reason behind all of this is that primitive are basic datatype they wont take mote storage space so js has allowed to always create a copy for them 
+// while with reference type they actual data and their pointer (which refer to data.) are stored in different location. data is stored in a heap and their pointer stores their address in the heap. while the pointer itself is stored in the memory stack.
+// when we say array2 = array1. the array2 pointer gets the same address there fore it gets the access to same data in the heap.
+// then why when we change one it changes all.
+ 
+
+//  js just has one number datatype where decimals and normal numbers are stored. 
+// they are defined just as we define String.
+let a= 10;
+console.log(a);
+console.log(typeof a);
+
+// numbers have all those same operators as in other languages. like + - * / 
+console.log(15/2);
+//  Now if nothing is assigned then it becomes undefined. why undefined because in js datatypes are defined at runtime and since there is nothing in the variable so it would o undefined during runtime.
+let b;
+// Or
+let c= undefined;
+console.log(b,c);
+console.log(typeof b, typeof c);
+
+// And null is null it just means Nothing is there.
+let d = null;
+console.log("we are trying to print d here :", d ,"it should print null.");
+
+
+// BigInt big int is just number dtype where the max limit is increased. for storage of numbers
+console.log(Number.MAX_SAFE_INTEGER);
+let myNumber = BigInt(12);
+let SameMyNumber = 12n;
+console.log(myNumber + SameMyNumber);
+console.log(typeof myNumber); // bigint
+console.log(BigInt.MAX_SAFE_INTEGER);
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Arrays1.js
+
+// Arrays in JS are similar to arrays in any other language. this is one of the reference type Datatype. 
+// Ordered collection of items . ordered doesnt means sorted. it means indexed. and arrays here can take multiple types of datatypes.
+let listOfFruits = ["apple","mango","grapes"];
+// apple mango grapes
+//   0     1     2 
+
+// we can add different types of values to it as well.
+let randomArray = [1,2,4,"apple",null,undefined,"google"];   
+console.log(randomArray);       //Output : (7) [1, 2, 4, 'apple', null, undefined, 'google']
+// whenever you print whole array in js you will always get its length first as output then whole array will return.
+
+// arrays are mutable.
+listOfFruits[1]= "kiwi";
+console.log(listOfFruits);
+console.log(typeof listOfFruits);  // object
+
+// We have wise variety of things that we refer to as object. 
+// how will we confirm that this is an array if we even need to.
+console.log(Array.isArray(listOfFruits)); // True.
+
+// PUSH POP 
+// push is adding something in the array from the top or last. and pop is removing the last element always no other position can be modified. arrays are mutable thats why we are abl;e to perform all of this.
+listOfFruits.push("mango again");
+console.log(listOfFruits);
+listOfFruits.pop();   // this will also return that poped elemt we can store that if we want.
+console.log(listOfFruits);
+
+// SHIFT AND UNSHIFT to remove and add elements to the starting of th array.   
+//  * one point to note is that push and pop are faster than shift unshift because shift unshift have to modify the whole array by shifting elements towards end.
+// while push pop will just remove or add element to end and thats it work is done they wont have to change the index of each element.
+//unshift first
+listOfFruits.unshift("banana","another fruit");  // this can work with multiple items
+console.log(listOfFruits);
+
+//shift
+listOfFruits.shift(); // this wont work with multiple items. only  one by one.
+console.log(listOfFruits);
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Arrays2.js
+
+// how to clone array. 
+// clone an array means create a copy of array so that they both are different than one another. change in one doesn't affect another.
+
+let array1 = ["item3","item1"];
+// let array2 = ["item1","item1"];     // this is one way to do but not good method.
+let array2 = array1.slice();           // since we haven't provided any value to the start or end it will copy all of the array. when we dont want to make changes in an array while performing changes and just want to store it somewhere we can use slice there as well.
+let array3 = [].concat(array1);        // this will also copy.
+console.log(array2);
+console.log(array1);
+
+// Spread method.
+let array4 = [...array1];      // remember this takes the array and spreads then copies it         // this can also work like let array4 = [...array1,"new element","another new element"] 
+// or we can spread multiple arrays just using comma.
+
+// js works from left to right so we can keep adding functions from left to right.
+let a1 = array1.slice().concat("ransom","random2");
+
+
+// we can use loops for traversing arrays. Like
+let array5 = [];
+for(let i=0;i<array1.length;i++){
+    array5.push(array1[i].toUpperCase());               // here we traversed array1 going through all elements one by one. and stored the value in array5 
+}
+console.log(array5);
+
+//WE CAN ALSO USE CONST FOR ARRAY IF WE WANT. then we wont be able to assign anything else to the variable that stores the reference of the array.
+
+const fruits= ['apple','banana'];
+
+// fruits = ["grapes","mango"];  // we wont be able to perform this because we are changing everything inside the array that will change the reference of the constant thats holding the address of the array.
+
+//BUT 
+fruits.push("grapes","banana");
+// this will work fine 
+
+fruits.unshift("moment");
+console.log(fruits)
+
+// Therefore this is a good practice to use reference type Data as const. so that whole of the data cant get lost.
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+ObjectsInJS.js
+
+// arrays are not perfect for real world data.
+// this error is solved by Objects in js.
+// Objects in JS are nothing but what dictionaries in python were. just a key value pairs.
+// Objects dont have index
+
+// since objects are also reference type so they should also be preferred to be in constant format for most of time.
+
+const Human = {
+    name: "Sagar",
+    age: 22
+};
+
+console.log(Human);
+console.log(typeof Human);
+
+
+// Since this is a key value pair. so first element before colon will be considered as Key and other value will be considered as value. 
+// So to access the value we must use Key. Makes sense right.
+console.log(Human.name);
+console.log(Human.age);
+
+// The "Keys" here are also referred to as PRoperties. Name is a property and age is a property of Human object. 
+
+// To add more key value pairs 
+
+Human.gender = "male";
+Human.hobbies = ["gym","sports","singing"];
+console.log(Human);
+
+// One point to note here is that the keys here by default will be converted to string. Means as we can see we haven't explicitly. but still if we take our mouse to that point we can see that it is a string.
+// since it is a string so we can also use them as follows to access the values.
+console.log(Human["gender"]);
+
+//  similarly we can add values in this way too
+
+Human["Dob"]= "6th aug 2000";
+
+// so whats the difference between "DOT Notation" and "STRING or Bracket notation".
+// sometimes what happens is that we want to Add a key where we want to give it a name that has spaces then we have to convert the whole thing into string.
+
+const anotherObj = {
+    "the person's Name": "Tiwari",
+    "their age" : 25
+};
+// is we think then it would be obvious that we would not be able to do this without bracket notation
+
+console.log(anotherObj["the person's Name"]);
+
+// Spread operator "..." in Objects.
+// now lets first revise what we learnt in arrays.
+const array1 = [1,2,3,4,5];
+const array2 = [1,2,3,4,5];
+
+const newArray = [array1,...array2];
+console.log(newArray);
+// as we can see in the output we got first array as it is and second array spread out.
+// this is why we use spread operator.
+// Now we can spread anyiterable anywhere. examples are givenn below.
+console.log(..."abcdefg");
+const array4 = [..."abcde"];
+// const array4 = [...1234567]; this will give error because numbers are not iterable.
+
+
+
+
+// NOW IN OBJECTS. it is also same as above.
+ // the onlyy difference is we use {} instead of []
+ const anotherHuman = {...Human,...anotherObj,key4:"valueRandom",key4:"Something Random"};
+ // in Objects there can be only one key with one name so whenever a new key with same name is defined irrespective of the value what will happen is that we will lose the old one and new value gets stored at the previous key.
+//  anotherHuman.key4 = "newRandom"; // as we can see that the value got changed.
+ console.log(anotherHuman);
+
+
+ const newObj = {..."abcde"};
+ console.log(newObj); // Output: { '0': 'a', '1': 'b', '2': 'c', '3': 'd', '4': 'e' }
+
+ // And is we try to create an object from an array it would assign the values from array and keep their keys as counting.
+ const newObj2 = {...["item1","item2",86]};
+ console.log(newObj2);
+ // indexing will always start from zero.
+ 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+iterables,js
+
+// iterables are those onn which we can run loops in short.
+// Strings and arrays are iterable.
+let fName = "Sagar";
+for(let char in fName){
+    console.log(fName[char]);
+};
+
+const array1 = ["item1","item2","item3"];
+for(let item in array1){
+    console.log(array1[item]);
+}
+
+
+// following code will give error because this objects in js are not iterable.
+const myObj = {firstName:"Sagar",age:1233};
+for(let item of myObj){
+    console.log(item);
+}
+
+// in JS array like objects are iterable.
+// 1. they have length property.
+// 2. we can access the elements using index.
+// example :- string
+
+// we have one more iterable in js that is sets. it is discussed in sets.js
+ 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+loops1.js
+
+// Loops are used when we need to repeat a task with little change in every iteration or with no change at all.
+// lets say we have to print 1 to 5.
+let i = 0;
+console.log(i);
+i++;
+console.log(i);
+i++;
+console.log(i);
+i++;
+console.log(i);
+i++;
+console.log(i);
+i++;
+console.log(i);
+
+console.log("while loop starts");
+
+// this is one method. but this increases complexity in our code.
+
+// So we have loops and there are 3 types of loops.
+// while, for, do-while
+
+//  While loop : this is used when we dont know how many times a loop should run . but we know that there is a condition till then the loop should run.
+let x= 0;
+while(x<=5){
+    console.log(x);
+    x++;
+}
+console.log("current value of x is ", x);
+
+// For loop. when we know exactly how many times a loop should run. this can be used.
+// but that wouldn't be a good practice because it would become a kind of global variable and it will exist outside of the loop as well and increase the complexity and space of the code.
+// the variable i does not exist outside this loop. we can declare this i outside as well and just use the semi colon keeping let i =0 part empty.
+// one more thing if we use var here then it would be same effect irrespective of the fact where we declare i.
+for(let i = 0;i<=5;i++){       
+    console.log(i);
+}
+
+// Do while is just a while loop where you want the process to run at least once no matter what
+x=0;
+do{
+    console.log(x);
+    x++;
+}while(x<=5)
+
+
+//now there is another important concept.
+// sometimes we want the loop to end in between in certain cases. and in certain case we want the loop to skip a few iterations. 
+// Thats exactly when we use break and continue respectively.
+// break; is used to terminate the immediate loop or block of statements. and takes the control to the immediate outer or next block.
+// continue is used to skip the following part of code and continue the iterations.
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+loops2.js
+
+// In js we have more types of loops . more like we had in python. or there syntax is  similar to python . they work only for iterables means arrays.
+
+// "For Of" loop in arrays.
+// this loop will not go index wise, it would go by item or element wise. so we wont have to keep in mind the length of the array.
+// possibilities are endless here as well
+
+const fruits = ["apple","banana","grapes"];
+// there is one thing to follow. call it like a convention, always name your array variable or constant as plural.
+// then this variable can be used as singular and this will increase readability.
+for(let fruit of fruits){
+    console.log(fruit);
+    // we can do anything inside.
+}
+
+//FOR IN LOOP // as we can see below this works with index // this is just used to that we dont have to get the headache of finding and managing the 
+for(let index in fruits){
+    console.log(fruits[index]);
+    // we can do anything inside.
+}
+
+// FOREACH()
+// this loop iterates over each element and performs the function that is told to perform.
+fruits.forEach(element => {
+    console.log(element);
+});
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+loopsOnObjects.js
+
+// we can use for in 
+
+const Human = {
+    name: "Sagar",
+    age: 22,
+    hobbies: ["gym","sports","singing"]
+};
+
+// for in loop // we remember this loop works with index so it will work with keys
+for(let key in Human){
+    console.log(key); // this will provide the key name.
+    console.log(Human[key]); // this will provide the value related to the key.
+
+    console.log(Human.key); // this will provide undefined as output.
+
+    // Lets understand the above behaviour first. so here we see in Human.Key we have seen that it works for human.name & human.Age
+    // and it doesnt work with human.key this is because if we write anything after dot it will consider as an actual key which is in string format. it will no longer be considered a variable that stores the value of key.
+    // thats why whenever loop runs it gets confused and becomes unable to find any key named "key". and prints undefined 3 times.
+
+}
+
+// here what actually is happening is we have created one variable that is "Key" Now this for loop will iterate ove the keys. and the keys will get stored in the key variable which we will use to access the values as above.
+
+// now to print the values in Key: value pair we have two methods.
+for(let key in Human){
+    console.log(key,":",Human[key]);
+    console.log(`${key} : ${Human[key]}`);
+    //both should provide same output.
+    console.log();
+}
+
+
+
+// NOW ANOTHER WAY TO GET ALL THE KEYS 
+console.log(Object.keys(Human)); // this would give array of all the keys.
+console.log("")
+// and by using this method we can iterate over the object as well.
+
+// remember this loop works on items in the array. so object.keys will return array and "FOR OF" will iterate over them one by one.
+
+for(let key of Object.keys(Human)){
+
+    console.log(Human[key]);
+
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Functions and Parameters .js
+
+// functions are just a reusable piece of code which we might use multiple times just with diffeent or even same values. 
+
+// function declaration.
+function printWhateverNeeded(){
+    console.log("whatever needed is printed");
+    console.log();
+}
+
+// to call a function just write its name with ()
+
+printWhateverNeeded();
+printWhateverNeeded();
+
+
+// functions are usually made to return something. means they are just used to calculate something and we need that calculated value for further calculation so we just tell the function to return the desired output.
+
+function toReturn(){
+    let x = 1;
+    let y = 4;
+    return x+y;
+}
+
+toReturn();// as we can see this will not print anything.
+
+console.log(toReturn());
+
+// now these all functions above were just examples none of them were actually any helpful . they all were pointless and they can only perform simple and single task.
+// we create functions so that we dont have to write same calculations for different values again and again.
+// so we make them take variables so that we can perform calculations again and again.
+
+
+function sumTwoNumbers(value1,value2=0){         // one point to remember here is that these value1 and value2 are parameters. we can assign some default value to these as well as provided to value2 in case user forgets to add or has nothing to add to the number.  
+    return value1+value2;
+}
+
+let summedValue = sumTwoNumbers(4,5);         // these 4,5 or if we pass anything these will be our arguments.
+console.log("summed",summedValue);
+
+// Rest Parameters. for variable number of parameters. when we dont know how many parameters one could pass then we use this method. means that rest all of the parameters get passed.
+
+function myFunc(a,b,...c){         // this triple dot is also for spread operator and also for rest operator.
+    console.log(`a is ${a}`);
+    console.log(`b is ${b}`);
+    console.log(`c is ${c}`); // this will print the array in string format
+    console.log(`c is `,c);
+
+}
+myFunc(2,3,4,45,6,7,8,);
+
+
+
+// example / practice funtion
+// isEven
+
+function isEven(number1){
+    if(number1%2===0){
+        console.log(true);
+    }
+    else{
+        console.log(false);
+    }
+}
+
+isEven(3);
+
+// search for a target in an array.
+function findTarget(array,target){
+    for(let i =0;i<array.length;i++){
+        if(array[i]===target){
+            return i;
+        }
+    }
+    return -1;
+
+}
+
+let target1 = findTarget([1,2,3,4,5,6,8],6); // 5
+console.log(target1);
+
+// Function expresion nothing else just another way of declaring a function.
+const printWhateverNeeded2 = function(){
+    console.log("whatever needed is printed");
+    console.log();
+}
+// this will work exact same way as it is above.
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// in JS we can create functions inside functions.
+// from now on we can use any formation of functions.
+const app = function(){
+    console.log("inside app");
+
+    const myFunc = ()=>{
+        console.log("inside App's myFunc function.");
+        
+    }
+
+    const addTwoNum = function(num1,num2){
+    myFunc(); // we can do this as well. because they are at same level
+     return num1 + num2;   
+    }
+    
+    // Now we can only call these functions from inside the main function.
+    myFunc();
+    let returnedSum = addTwoNum(2,3);
+    console.log(returnedSum);
+}
+
+// now to use the main function we have to call the function outside the function only.
+app(); // this is a reminder that we cannot access the inner functions.only same or above level or outer functions are accesible.
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Conditionals.js
+
+// if-else ,else if and nested if else here is just like JAVA. 
+let age = 18;
+if(age>=18){
+    console.log("Major");
+}
+else if(age<=15){
+    console.log("Minor");
+}
+else{
+console.log("nothing");
+}
+
+
+//booleans and comparison
+// boolean is that datatype which can store only two values either true or false.
+let num1= 18;
+let num2 = 18;
+let num3 ="18";
+console.log(num1 < num2);  // fales
+console.log(num1 > num2);  // false
+console.log(num1 <= num2); //true
+console.log(num1 == num2); //true
+console.log(num1 == num3); // true this will return true because values are same no matter the data type is what.
+console.log(num1 === num2); // true. this will return true as well because dtype and value bothare same.
+console.log(num1 === num3); // this will return fasle because "===" checks dtype as well as value.
+console.log(num1 != num3);  // false.
+console.log(num1 !== num3);  // true
+
+// #################################################################################
+
+
+
+
+// // False values and truthy values.
+// false
+// ""
+// null
+// undefined
+// 0
+// // these all are falsy values means these will be considered as false values.
+
+//Truthy values are anything else but above.
+//"abc"
+// 1,-1
+
+// #########################Ternary Operators.#################################################
+
+// these are also known as conditional operators.
+// these work as (condition)? "true block" : "false block"
+age=22;
+console.log((age>=17)?"Major":"minor");
+//or
+let majorOrMinor = (age>=17)?"Major":"minor";
+console.log(majorOrMinor);
+
+
+// And OR operator.
+if(age>18 && age>20){
+    console.log("major and able to drink");
+}
+else if(age>18 || age >20 ){
+    console.log("you can get your driving license though.");
+}
+else if(age>18 && age<=20 ){
+console.log("enjoy but dont get caught")
+}
+else{
+    console.log("Minor");
+}
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+array destructuring
+// array destructuring means to store the elements of array into separate variables.
+const myArray =["value 1","value2","value 3","another value"];
+// to Destructure we have to do create temporary array that will be deconstructed right after wards.
+
+let [myVar1,myVar2] = myArray;
+console.log("v1",myVar1);
+console.log("v2",myVar2);
+//and value 3 didn't got assigned to anything because this works one by one.
+
+// And we just had 1 value in myArray and 3 variables to store then other two would become undefined as nothing got stored in them.
+let [myVar3,  ,myVar4] = myArray;
+//   value1    value3
+//  we can do the above written too if we want to skip the value without creating any extra variable.
+
+let [myVar5,myVar6,...myNewArray] = myArray;
+
+// let [myVar5,...myNewArray,myVar6] = myArray;     //this cannot be done.
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+arrayFunctionsInbuilt
+
+// important array functions 
+// foreach, map, filter, reduce.
+
+const array1 = [4,3,2,6];
+array1.forEach( function(element,index) {                            // here as well if want we can pass upto two parameters they can only be element and index. and that too in the same order. 
+    console.log(`${element} at index ${index} multiplied by 2 is =`,element*2);
+});
+
+// this is our foreach loop. it works through anonymus function where the function dont have any name.
+// this function will callback the function whatever we define in it.this iterated through elements and performs the functions. Functions can be whatever you want.
+// it can be anyother function too like we made any function somewhere else as well then we can use that to work with it too.
+
+function myFunc(number,index){
+    console.log(`the number at index ${index} is ${number}`);
+}
+
+array1.forEach(myFunc)
+
+// lets say we have an array of objects.
+const users = [
+    {firstName:"Sagar",age:22},
+    {firstName:"amana",age:23},
+    {firstName:"hardh",age:24},
+    {firstName:"Anmol",age:25},
+]
+
+users.forEach(function(user){
+    console.log(user.firstName,"is",user.age, "years old.");
+})
+
+// ###################################################################################################################################
+// Map method. Map method returns array and can work with index as well. this is used to create a new array which is created by using an existing array.
+const numbers=[1,2,3,4,5,6,6,7];
+
+const square= function(number){
+    // console.log(number*number);
+    return number*number;
+}
+
+const squaredNumbers = numbers.map(square); // this map function will call a callback function so it can either show output or return something. it wont change the original array.
+// so we have to store the returned value to use it somewhere else.
+console.log(squaredNumbers);
+
+const squaredNumbers2 = numbers.map((element,index)=>{
+    console.log("storing square of ",index);
+    return element*element;
+
+});
+
+console.log(squaredNumbers2);
+
+// ###################################################################################################################################
+// Filter Method.
+
+// filter method is a method where we can filter out the given array according to our own conditions.
+// like in foreach function can do anything. and in map filter function must return a value so that it can create a new array.
+// just like that filter function must return a boolean value where if it returns true for an element.then means element passed out filter test. then it would be stored in the new array. rest will not be stored.
+
+const evenNumbers = numbers.filter((number)=>{
+    return number%2===0;
+})
+
+console.log(evenNumbers);
+
+// we can also create callback functions. 
+
+// ###################################################################################################################################
+
+// Reduce Method. The reduce () method reduces the array to a single value.
+//  Now how it reduces the value to a single value it depends on us. it could be a total of all the values. or it could be multiplication of all the values or it could even be anything like any complicated calculation.
+
+
+const sum = numbers.reduce((accumulator,currentvalue,index)=>{     // it works something like a fibonacci series. first element gets stored at accumulator, second at current value. and then the calculation gets performed. this all will happen for the first index and then for next index. then the result gets stored at accumulator, next currentvalue stores the next element and this goes on. 
+    console.log("at index",index);
+    return accumulator+currentvalue;
+},0// here we can pass the default value of the accumulator
+);
+
+console.log(sum);
+
+// a real life example.
+
+const userCart = [
+    {productId:1, productName:"Trimmer",productAmount:1000},
+    {productId:2, productName:"MobilePhone",productAmount:12000},
+    {productId:3, productName:"Batteries",productAmount:150},
+];
+
+const cartTotal = userCart.reduce((totalPrice,currentProduct)=>{
+    return currentProduct.productAmount + totalPrice;
+},0);
+console.log("carttotal",cartTotal);
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+ arrayFunctionsInbuilt2.js
+
+//Find method, every, some, splice, start , delete, insert.
+
+// Find method, finds and returns the first match in the array.
+const myArray = ["hello","cat","dog","lion"];
+function isLength3(string){
+    return string.length === 3;
+
+}
+const findans = myArray.find(isLength3); // this function also works with call back functions.
+// const ans2= myArray.find("cat"); this does not work so this can only take functions.
+
+console.log(findans);
+const userCart = [
+    {productId:1, productName:"Trimmer",productAmount:1000},
+    {productId:2, productName:"MobilePhone",productAmount:12000},
+    {productId:3, productName:"Batteries",productAmount:150},
+];
+
+const findans2 = userCart.find((item)=>{
+    return item.productName === "Trimmer";
+});
+console.log(findans2);
+const findans3 = userCart.find((item)=>item.productId===2);
+console.log(findans3);
+
+
+//###############################################################################################
+
+// EVERY METHOD, checks if every element in the array passes the condition mentioned. if yes then it returns true otherwise false.
+const numbers = [2,3,4,5,6,78,8];
+const everyans = numbers.every((number)=>number%2===0); //false, here we are checking if each element is even.
+console.log(everyans);
+const everyans2 = userCart.every((item)=>item.productAmount<20000);
+console.log(everyans2); // true
+
+//###############################################################################################
+
+// Some method . it will return true if at least one of the element passes the condition.
+console.log(numbers.some((number)=>number%2===0)); // here we are checking if at least one of the number is even.
+// rhe usercart example will work here same as well.
+
+//###############################################################################################
+
+// FILL method. this will change original array.
+// we can create and fill a new array with one value.or we will fill the array with a value from start to end index.
+const myArray1 = new Array(10).fill(15); // this can be used to create an aray of length 10 filled completely with 15.yes both of these numbers can change.
+console.log(myArray1);
+// or we can just change the values.
+myArray1.fill(4,3,6); // fill( value, start , end). end is not included means it will go till end -1
+console.log(myArray1);
+
+//###############################################################################################
+
+// Splice() method is used when we want to insert in an array in between or delete something in between. this will change the original array.
+// this has arguments first is start, then second is delete(how many items you want to delete) and third is insert(what you want to insert at that position).
+
+//delete
+const names = ["sagar","pankaj","aman","priyal","gandhi"];
+names.splice(1,1); // this will start from index 1 and delete 1 item. so pankaj should be deleted from the array. and we dont want to insert so we will leave insert point empty.
+console.log(names); //[ 'sagar', 'aman', 'priyal', 'gandhi' ] as we can see its gone.
+
+//insert
+names.splice(1,0,"panku");
+console.log(names); //[ 'sagar', 'panku','aman', 'priyal', 'gandhi'] we have added the valeu.
+
+// insert and delete
+const deletedNames = names.splice(1,2,"a","b","vc"); // here we are deleting some values its returning those values as well we can save them into a variable or constant and use them.
+// names.splice(1,2,["a","b","vc"]); // [ 'sagar', [ 'a', 'b', 'vc' ], 'priyal', 'gandhi' ]
+
+console.log(names); //[ 'sagar', 'a', 'b', 'vc', 'priyal', 'gandhi' ]
+console.log(deletedNames);
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+ObjectsInsideArray.js
+
+// Objects inside array are nothing else just array of objects.
+
+const users = [
+    {id:1, fname:"sagar", sirname:"Tiwari"},
+    {id:2, fname:"pankaj", sirname:"Tiwari"},
+    {id:3, fname:"rahul", sirname:"Singh"}
+];
+console.log(users);
+console.log(users[1].fname);
+
+// Now we will see how to use loops with this
+
+//For of
+for(let user of users){
+    console.log(user.fname, user.sirname);
+}
+
+
+// for in loop
+
+for (let user in users){
+    console.log(users[user].sirname);
+}
+
+console.log();
+
+
+// Now lets see how we will destructure this type of datatype
+
+let [user1,...user2] = users;
+console.log(user1);
+console.log(user2);
+console.log();
+console.log(user1.fname);
+console.log(user2[0].fname);
+
+// now if we dont want whole datatype to destructure we would do following.
+
+const [{fname,id}, , user3]=users;
+console.log(fname);   // this should give sagar and it does. 
+//remember while destructuring objects that the variable names where you will store the value should be same as the key that we are trying to unfold or destructure.
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+ArrowFunctions.js
+
+//Arrow fucntions are used very widely and commonly.
+//following is a function expression
+const printWhateverNeeded2 = function(){
+    console.log("whatever needed is printed");
+    console.log();
+}
+
+// following will be same function as above but in arrow formation.
+const printWhateverNeeded1 = () => {                               // thats it . 
+    console.log("whatever needed is printed");
+    console.log();
+}
+
+const isEven = (numberInput) => {
+    return numberInput % 2 === 0 ;
+
+}
+console.log(isEven(16));
+
+//when we are using exaclty one parameter we can skip brackets.but we should use brackets as it is a good practice.
+const isEven1 = numberInput => { 
+    return numberInput % 2 === 0 ;
+
+}
+
+// now we can make these functions even shorter.
+const isEven2 = numberInput => numberInput % 2 === 0 ;
+//removed braces and removed the return.
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+CompuedProperties.js
+// Computed properties
+
+const key1 = "objKey1";
+const key2 = "objKey2";
+
+const value1 = "myValue1";
+const value2 = "myValue2";
+
+
+const testObj={
+    [key1]:"myValue1",   // these properties are known as computed properties.
+     [key2]: "myVavlue2"
+}
+
+// // second way to do this
+// testObj[key1]=value1;
+// testObj[key2]=value2;
+
+console.log(testObj);
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+ObjectDesturcturing.js
+
+const singer={
+    singerName : "Katy Perry",
+    famousSong : "harleys in hawai",
+    anotherFamousSong: "Roar",
+    year : 1000 
+    
+};
+
+
+const song = singer.famousSong;
+const singer1 = singer.singerName;
+
+console.log(singer1,song);
+// this would be traditional way. now 
+
+const {famousSong,singerName} = singer;
+console.log();
+console.log(famousSong,singerName);
+
+// this is how we de structure objects.
+// we have to use same name while destructuring. if we want to give different names to variable then 
+const { famousSong:var1,singerName:Sname}=singer;
+console.log(var1,Sname);
+
+// if we have more keys than we are destructuring then only those numkber of keys will be destructured as many we are mentioning while destructuring.
+const { famousSong:var3,singerName:Sname1,...myObj2}=singer;
+console.log(myObj2);
+// here we can see that rest of the object got saved in another variable as an object.
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
